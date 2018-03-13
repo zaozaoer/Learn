@@ -1,14 +1,13 @@
 package com.tzhao.app.spring;
 
 import com.tzhao.app.spring.service.HelloMessageService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 
 import static java.lang.System.exit;
 
@@ -16,7 +15,8 @@ import static java.lang.System.exit;
 public class SpringBootConsoleApplication implements CommandLineRunner {
 
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(SpringBootConsoleApplication.class);
+    private static final Logger LOGGER =
+            LogManager.getLogger(SpringBootConsoleApplication.class);
 
     @Autowired
     private HelloMessageService helloService;
@@ -30,16 +30,16 @@ public class SpringBootConsoleApplication implements CommandLineRunner {
     }
 
 
-
     @Override
     public void run(String... args) throws Exception {
         LOGGER.debug("a debug");
         LOGGER.info("a info");
         LOGGER.warn("a warn");
         LOGGER.error("a error");
-        if (args.length > 0) {
+        if ( args.length > 0 ) {
             System.out.println(helloService.getMessage(args[0].toString()));
-        } else {
+        }
+        else {
             System.out.println(helloService.getMessage());
         }
 
