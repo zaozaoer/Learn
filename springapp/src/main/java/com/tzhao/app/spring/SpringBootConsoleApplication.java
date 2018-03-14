@@ -25,7 +25,7 @@ public class SpringBootConsoleApplication implements CommandLineRunner {
 
         //disabled banner, don't want to see the spring logo
         SpringApplication app = new SpringApplication(SpringBootConsoleApplication.class);
-        app.setBannerMode(Banner.Mode.OFF);
+        //app.setBannerMode(Banner.Mode.OFF);
         app.run(args);
     }
 
