@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
+    <!--
     <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+    -->
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>ERROR</level>
+            <level>INFO</level>
         </filter>
 
         <layout class="ch.qos.logback.classic.PatternLayout">
@@ -69,7 +71,7 @@
 
     </appender>
 
-    <logger name="com.tzhao.app.spring" level="ERROR"
+    <logger name="com.tzhao.app.spring" level="INFO"
             additivity="true">
         <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE-AUDIT" />
